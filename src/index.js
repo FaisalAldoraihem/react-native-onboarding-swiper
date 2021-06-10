@@ -77,7 +77,7 @@ class Onboarding extends Component {
   keyExtractor = (item, index) => index.toString();
 
   renderItem = ({ item }) => {
-    const { image, title, subtitle, backgroundColor } = item;
+    const { title, subtitle, backgroundColor } = item;
     const isLight = tinycolor(backgroundColor).getBrightness() > 180;
     const {
       containerStyles,
@@ -90,7 +90,6 @@ class Onboarding extends Component {
     return (
       <Page
         isLight={isLight}
-        image={image}
         title={title}
         subtitle={subtitle}
         width={this.state.width || Dimensions.get('window').width}
@@ -231,7 +230,7 @@ Onboarding.propTypes = {
   pages: PropTypes.arrayOf(
     PropTypes.shape({
       backgroundColor: PropTypes.string.isRequired,
-      image: PropTypes.element.isRequired,
+      image: PropTypes.element,
       title: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.element,

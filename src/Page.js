@@ -39,7 +39,6 @@ const Page = ({
 
   return (
     <View style={[styles.container, containerStyles, { width, height }]}>
-      <View style={[styles.imageContainer, imageContainerStyles]}>{image}</View>
       {titleElement}
       {subtitleElement}
     </View>
@@ -48,7 +47,7 @@ const Page = ({
 
 Page.propTypes = {
   isLight: PropTypes.bool.isRequired,
-  image: PropTypes.element.isRequired,
+  image: PropTypes.element,
   containerStyles: ViewPropTypes.style,
   imageContainerStyles: ViewPropTypes.style,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
